@@ -1,0 +1,91 @@
+/* ===== Reset / Base ===== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	line-height: 1.5;
+	color: #222;
+	background-color: #fdfdfd;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* ===== Layout ===== */
+header,
+footer {
+	background-color: #0a3330;
+	color: #fff;
+	padding: 1rem 2rem;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+main {
+	display: flex;
+	flex-wrap: auto;
+	flex: 1;
+	gap: 2rem;
+	padding: 2rem;
+	width: 60vw;
+	max-width: 1800px;
+	margin: 0 auto;
+}
+
+article {
+	flex: 3 1 60%;
+	background-color: #9999dd;
+}
+
+aside {
+	flex: 1 1 30%;
+	background-color: #dd9999;
+}
+
+/* ===== Navigation ===== */
+
+nav ul {
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+/* ===== Content ===== */
+h1,
+h2,
+h3 {
+	margin-bottom: 0.5rem;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+/* ===== Footer ===== */
+footer p {
+	text-align: center;
+	font-size: 0.875rem;
+}
