@@ -19,6 +19,8 @@
   const calendar = document.getElementById("calendar");
   const emailForm = document.getElementById("email-form");
   const confirmation = document.getElementById("confirmation");
+  const contactBtn = document.querySelector(".contact-btn");
+
   let selectedDate = null;
   let selectedTime = null;
 
@@ -47,6 +49,7 @@
 
   // 2️⃣ Show slots for a selected date
   function showSlots(date, dayElement) {
+    contactBtn.style.display = "none";
     selectedDate = date;
     selectedTime = null;
     document.querySelectorAll(".day").forEach(d => d.classList.remove("active"));
@@ -72,41 +75,25 @@
 
   // 3️⃣ Select a specific time slot
   function selectSlot(date, time, slot) {
-    if (booked[date]?.includes(time)) return alert("That slot is already booked!");
     selectedDate = date;
     selectedTime = time;
-    emailForm.style.display = "flex";
     confirmation.textContent = "";
       document.querySelectorAll(".slot").forEach( d => d.classList.remove("active"));
     slot.classList.add("active");
+    updateMailtoLink();
   }
 
-  // 4️⃣ Handle email confirmation
-  emailForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value.trim();
-    if (!validateEmail(email)) {
-      alert("Please enter a valid email address.");
-      return;
+  function updateMailtoLink() {
+    let subject = "Anmodning om møde";
+    let body = "Kære Refusionsportalen %0A%0A";
+    if (selectedDate && selectedTime) {
+      body += `Jeg vil gerne booke et møde den ${selectedDate} klokken ${selectedTime}.%0A%0A`;
     }
-    // Save booking
-    if (!booked[selectedDate]) booked[selectedDate] = [];
-    booked[selectedDate].push(selectedTime);
-    localStorage.setItem("bookedSlots", JSON.stringify(booked));
+    body += "Tak!";
 
-    confirmation.innerHTML = `
-      ✅ You booked <strong>${selectedDate}</strong> at <strong>${selectedTime}</strong>.<br>
-      We sent a confirmation email to <em>${email}</em>.
-    `;
-    emailForm.reset();
-    emailForm.style.display = "none";
-    document.querySelector(".slots")?.remove();
-    renderCalendar();
-  });
-
-  // Simple email validator
-  function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const href = `mailto:lorem@ipsum.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    contactBtn.style.display = "inline-block";
+    contactBtn.href = href;
   }
 
   renderCalendar();
