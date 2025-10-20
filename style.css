@@ -238,12 +238,10 @@ aside {
 	gap: 2rem;
 }
 
-/* Make even ones reversed */
-.statements article:nth-child(even) {
+.statements article:nth-child(odd) {
 	flex-direction: row-reverse;
 }
 
-/* Image styling */
 .statements img {
 	width: 200px;
 	height: auto;
@@ -251,7 +249,6 @@ aside {
 	object-fit: cover;
 }
 
-/* Quote styling */
 .statements blockquote {
 	font-size: 1.1rem;
 	font-style: italic;
