@@ -125,7 +125,6 @@ aside {
 	/* crops edges but keeps proportions */
 	display: block;
 	filter: brightness(0.7);
-	/* darkens the image a bit for text contrast */
 }
 
 .hero-text {
