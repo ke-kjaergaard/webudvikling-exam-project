@@ -14,6 +14,7 @@
 html {
 	font-size: 16px;
 	scroll-behavior: smooth;
+	height: 100%;
 }
 
 /* ===== Header ===== */
@@ -26,7 +27,7 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 10;
-	height: 105px;
+	height: 10vh;
 }
 
 header>* {
@@ -76,20 +77,24 @@ body {
 	font-family: system-ui, sans-serif;
 	color: #222;
 	background-color: #fdfdfd;
+	height: 100%;
 	min-height: 100vh;
 }
 
 main {
 	padding: 0rem;
+	flex: 1;
+	flex-direction: column;
 }
 
 .content {
 	flex-wrap: wrap;
-	margin: 0 auto;
+	margin: 10px auto;
 	max-width: 1800px;
-	width: 40vw;
+	width: 70vw;
 	gap: 2rem;
 	padding: 2rem;
+	padding-bottom: 0;
 	display: flex;
 }
 
@@ -171,14 +176,14 @@ aside {
 
 .features-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	gap: 2rem;
 }
 
 .feature-card {
 	background-color: #fff;
 	border-radius: 0.75rem;
-	padding: 1.5rem;
+	padding: 0.8rem;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -253,6 +258,7 @@ h3 {
 
 p {
 	margin-bottom: 1rem;
+	margin: 1rem;
 }
 
 body>img {
@@ -266,6 +272,7 @@ footer {
 	background-color: #0a3330;
 	color: #fff;
 	padding: 1rem 2rem;
+	width: 100%;
 }
 
 footer p {
@@ -275,4 +282,10 @@ footer p {
 
 footer a {
 	color: #fff;
+}
+
+article h2 {
+	text-align: center;
+	padding: 5vh 0px;
+	text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px pink;
 }
