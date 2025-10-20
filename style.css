@@ -199,6 +199,14 @@ aside {
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.feature-card img {
+	height: 150px;
+	width: 150px;
+	object-fit: cover;
+	border-radius: 5%;
+
+}
+
 .feature-card:hover {
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
@@ -374,15 +382,20 @@ aside {
 	transform: matrix(1.05, 0, 0, 1.1, 0, 0);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 	main {
 		flex-direction: row;
+	}
+
+	.content {
+		width: 100vw;
 	}
 
 	article,
 	aside {
 		flex: 1 1 100%;
 	}
+
 }
 
 /* Mobile-friendly layout in nav */

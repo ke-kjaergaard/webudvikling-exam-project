@@ -91,7 +91,7 @@
     }
     body += "Tak!";
 
-    const href = `mailto:lorem@ipsum.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    const href = `mailto:bk@refusionsportalen.dk?subject=${encodeURIComponent(subject)}&body=${body}`;
     contactBtn.style.display = "inline-block";
     contactBtn.href = href;
   }
