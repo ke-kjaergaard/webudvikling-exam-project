@@ -79,6 +79,8 @@ body {
 	background-color: #fdfdfd;
 	height: 100%;
 	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 main {
@@ -265,6 +267,48 @@ aside {
 	font-weight: bold;
 }
 
+.booking {
+	max-width: 500px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	text-align: center;
+	background: #fff;
+	border-radius: 0.75rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking h2 {
+	margin-bottom: 1rem;
+}
+
+.time-slots {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.slot {
+	padding: 0.75rem 0;
+	border-radius: 0.5rem;
+	background: #eee;
+	cursor: pointer;
+	font-weight: 600;
+	transition: background 0.3s, transform 0.2s;
+}
+
+.slot:hover {
+	background: #ffcc80;
+	transform: translateY(-3px);
+}
+
+.slot.booked {
+	background: #ccc;
+	color: #666;
+	cursor: not-allowed;
+	text-decoration: line-through;
+}
+
 @media (max-width: 768px) {
 	main {
 		flex-direction: row;
@@ -313,6 +357,7 @@ footer {
 	color: #fff;
 	padding: 1rem 2rem;
 	width: 100%;
+	min-height: 50px;
 }
 
 footer p {
