@@ -225,6 +225,50 @@ aside {
 	background-color: #cc7a00;
 }
 
+.statements {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	width: 60vw;
+	margin: 0 auto;
+}
+
+.statements article {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+/* Make even ones reversed */
+.statements article:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+/* Image styling */
+.statements img {
+	width: 200px;
+	height: auto;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+/* Quote styling */
+.statements blockquote {
+	font-size: 1.1rem;
+	font-style: italic;
+	color: #333;
+	line-height: 1.6;
+	max-width: 30ch;
+}
+
+.statements cite {
+	display: block;
+	margin-top: 0.5rem;
+	font-style: normal;
+	color: #666;
+	font-weight: bold;
+}
+
 @media (max-width: 768px) {
 	main {
 		flex-direction: row;
