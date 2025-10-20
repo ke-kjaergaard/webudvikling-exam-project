@@ -37,11 +37,16 @@
     <main class="content">
         <section class="booking">
             <h2>Book a Meeting</h2>
-            <p>Select a time slot to reserve your meeting with us.</p>
+            <p>Select a date to see available times and confirm with your email.</p>
 
-            <input id="email-field"></input>
-            <div id="time-slots" class="time-slots">
-            </div>
+            <div id="calendar" class="calendar"></div>
+            <form id="email-form" class="email-form" style="display: none;">
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" required placeholder="you@example.com">
+                <button type="submit">Confim Booking</button>
+            </form>
+
+            <div id="confirmation" class="confirmation"></div>
         </section>
     </main>
     <footer>

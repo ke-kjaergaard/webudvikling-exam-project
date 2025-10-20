@@ -1,7 +1,8 @@
 /*  Variables  */
 
 :root {
-	--payview-green: #0a3330
+	--payview-green: #0a3330;
+	--footer-height: 50px;
 }
 
 /* ===== Reset / Base ===== */
@@ -79,14 +80,13 @@ body {
 	background-color: #fdfdfd;
 	height: 100%;
 	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
 }
 
 main {
 	padding: 0rem;
 	flex: 1;
 	flex-direction: column;
+	min-height: calc(100vh - var(--footer-height) - 4rem);
 }
 
 .content {
@@ -96,7 +96,6 @@ main {
 	width: 70vw;
 	gap: 2rem;
 	padding: 2rem;
-	padding-bottom: 0;
 	display: flex;
 }
 
@@ -268,7 +267,7 @@ aside {
 }
 
 .booking {
-	max-width: 500px;
+	max-width: 700px;
 	margin: 2rem auto;
 	padding: 1.5rem;
 	text-align: center;
@@ -277,14 +276,48 @@ aside {
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.calendar {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+	gap: 1rem;
+	margin: 1.5rem 0;
+}
+
+.day {
+	padding: 0.75rem;
+	border-radius: 0.5rem;
+	background: #eee;
+	cursor: pointer;
+	font-weight: 600;
+	transition: background 0.3s, transform 0.2s;
+}
+
+.day:hover {
+	background: var(--payview-green);
+	color: white;
+	transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+}
+
+.day.unavailable {
+	background: #ccc;
+	color: #777;
+	cursor: not-allowed;
+}
+
+.day.unavailable:hover {
+	transform: none;
+}
+
+.day.active {
+	background: var(--payview-green);
+	color: white;
+}
+
 .booking h2 {
 	margin-bottom: 1rem;
 }
 
-.time-slots {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-	gap: 1rem;
+.slots {
 	margin-top: 1rem;
 }
 
@@ -297,9 +330,15 @@ aside {
 	transition: background 0.3s, transform 0.2s;
 }
 
+.slot.active {
+	background: var(--payview-green);
+	color: white;
+}
+
 .slot:hover {
-	background: #ffcc80;
-	transform: translateY(-3px);
+	background: var(--payview-green);
+	color: white;
+	transform: matrix(1.05, 0, 0, 1.05, 0, 0);
 }
 
 .slot.booked {
@@ -357,7 +396,7 @@ footer {
 	color: #fff;
 	padding: 1rem 2rem;
 	width: 100%;
-	min-height: 50px;
+	height: var(--footer-height);
 }
 
 footer p {
