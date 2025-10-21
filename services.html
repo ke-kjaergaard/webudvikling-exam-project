@@ -14,7 +14,7 @@
 <body>
     <header>
         <a href="index.html">
-            <img src="images/logo.png" alt="Forside" style="font-size: 500%;">
+            <img src="images/logo.jpg" alt="Forside" style="font-size: 500%;">
         </a>
         <nav>
             <ul>
@@ -64,11 +64,31 @@
                 til, og at vi tilpasser os dine behov.
             </p>
         </article>
-        <h2>Noget for dig? <a href="contact.html">Book et møde</a></h2>
+        <h2>Noget for dig? <a href="contact.html">Book et møde</a> eller beregn prisoverslag herunder</h2>
+        <section class="price-estimator">
+            <h2>Prisberegner</h2>
+            <form id="estimator-form">
+                <label for="employees">Hvor mange medarbejdere er I?</label>
+                <input type="number" id="employees" name="employees" min="1" placeholder="Antal medarbejdere" required>
+
+                <label for="service">Hvilken type løsning søger I?</label>
+                <select id="service" name="service" required>
+                    <option value="">Vælg en løsning...</option>
+                    <option value="consulting">Rådgivning</option>
+                    <option value="management">Administration</option>
+                    <option value="both">Begge</option>
+                </select>
+
+                <button type="submit">Beregn pris</button>
+            </form>
+
+            <p id="result"></p>
+        </section>
     </main>
     <footer>
         Vi er en del af <a href="www.payview.dk">Payview</a>
     </footer>
 </body>
+<script src="price-estimator.js"></script>
 
 </html>
