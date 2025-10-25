@@ -438,7 +438,6 @@ aside {
 }
 
 .company-logos {
-	margin: 4rem auto;
 	text-align: center;
 	overflow: hidden;
 	max-width: 100%;
@@ -458,16 +457,16 @@ aside {
 /* Inner track: the moving strip */
 .logo-track {
 	display: flex;
-	gap: 4rem;
 	width: max-content;
-	animation: scroll-logos 25s linear infinite;
+	gap: 0rem;
+	animation: scroll-logos var(--duration) linear infinite;
 }
 
 /* Each logo */
 .logo-track img {
 	max-height: 60px;
 	width: auto;
-	object-fit: contain;
+	margin: 2rem;
 	filter: grayscale(100%);
 	opacity: 0.8;
 	transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
@@ -487,21 +486,17 @@ aside {
 
 /* Animation keyframes */
 @keyframes scroll-logos {
-	0% {
+	from {
 		transform: translateX(0);
 	}
 
-	100% {
-		transform: translateX(-50%);
+	to {
+		transform: translateX(var(--scrollX));
 	}
 }
 
 /* Responsive tweak */
 @media (max-width: 800px) {
-	.logo-track {
-		gap: 2rem;
-		animation-duration: 20s;
-	}
 
 	.logo-track img {
 		max-height: 40px;
