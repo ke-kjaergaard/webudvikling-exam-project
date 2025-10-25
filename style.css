@@ -182,8 +182,8 @@ aside {
 }
 
 .feature-card h3 {
-	font-size: 2rem;
-	margin-bottom: 0.5rem;
+	font-size: 1.5rem;
+	margin: 0.5rem 0;
 }
 
 .features-grid {
@@ -200,8 +200,8 @@ aside {
 }
 
 .feature-card img {
-	height: 150px;
-	width: 150px;
+	height: 190px;
+	width: 190px;
 	object-fit: cover;
 	border-radius: 5%;
 
@@ -223,7 +223,8 @@ aside {
 .feature-card p {
 	font-size: 1rem;
 	color: #555;
-	margin-bottom: 1rem;
+	padding: 0;
+	margin: 1rem;
 }
 
 .feature-card .cta {
