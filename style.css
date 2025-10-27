@@ -24,12 +24,14 @@ html {
 header {
 	background-color: var(--payview-green);
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 	position: sticky;
 	top: 0;
 	z-index: 10;
-	height: 10vh;
+	min-height: 10vh;
+	height: auto;
 }
 
 header>* {
@@ -57,6 +59,7 @@ header nav {
 nav ul {
 	list-style: none;
 	display: flex;
+	flex-direction: row;
 	gap: 1.5rem;
 	margin: 0;
 	padding: 0;
@@ -496,15 +499,8 @@ aside {
 	}
 }
 
-/* Responsive tweak */
-@media (max-width: 800px) {
 
-	.logo-track img {
-		max-height: 40px;
-	}
-}
-
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
 	.content {
 		width: 100vw;
 	}
@@ -514,19 +510,24 @@ aside {
 		flex: 1 1 100%;
 	}
 
-}
+	.logo-track img {
+		max-height: 40px;
+	}
 
-/* Mobile-friendly layout in nav */
-@media (max-width: 1800) {
+	header {
+		height: 200px;
+	}
+
+	header a {
+		padding-left: 2rem;
+	}
+
 	nav ul {
-		flex-direction: row;
+		flex-direction: column;
+		align-items: flex-start;
 		gap: 0.75rem;
 	}
 
-	nav {
-		flex-direction: row;
-		align-items: flex-start;
-	}
 }
 
 /* ===== Content ===== */
