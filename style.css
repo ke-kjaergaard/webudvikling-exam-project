@@ -134,7 +134,7 @@ aside {
 	object-fit: cover;
 	/* crops edges but keeps proportions */
 	display: block;
-	filter: brightness(0.7);
+	filter: brightness(0.4);
 }
 
 .hero-text {
@@ -323,7 +323,7 @@ aside {
 
 .day.unavailable {
 	background: #ccc;
-	color: #777;
+	color: #444444;
 	cursor: not-allowed;
 }
 
